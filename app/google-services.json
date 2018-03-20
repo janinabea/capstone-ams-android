@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "626754098561",
+    "firebase_url": "https://attendancemonitoringsyst-c3092.firebaseio.com",
+    "project_id": "attendancemonitoringsyst-c3092",
+    "storage_bucket": "attendancemonitoringsyst-c3092.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626754098561:android:b5c43e7f00c95db1",
+        "android_client_info": {
+          "package_name": "hernandez.com.iics.materializedattendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "626754098561-j3cketr0t9ahgdvrh1ddtaqu6m3keaqi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hernandez.com.iics.materializedattendance",
+            "certificate_hash": "216015eb03e23aeb9f32c17032cf252199adf61e"
+          }
+        },
+        {
+          "client_id": "626754098561-fbdvldkas48bk7u8dja9uhcts5ilr714.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXvJBuX9JkYDcguWQ8r9xt03fY5Wto-Es"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "626754098561-fbdvldkas48bk7u8dja9uhcts5ilr714.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
