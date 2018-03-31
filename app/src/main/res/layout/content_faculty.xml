@@ -8,4 +8,10 @@
     tools:context="hernandez.com.iics.materializedattendance.FacultyActivity"
     tools:showIn="@layout/app_bar_faculty">
 
+    <ListView
+        android:id="@+id/facultyListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
 </android.support.constraint.ConstraintLayout>

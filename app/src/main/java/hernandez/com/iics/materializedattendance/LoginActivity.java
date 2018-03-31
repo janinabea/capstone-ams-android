@@ -70,6 +70,8 @@ public class LoginActivity extends AppCompatActivity  {
 //                    mPasswordView.setText(null);
 //                    Toast.makeText(LoginActivity.this, "Login failed. Invalid username or password", Toast.LENGTH_SHORT).show();
 //                }w
+                Intent intent = new Intent(LoginActivity.this, AdminMainActivity.class);
+                startActivity(intent);
             }
         });
     }

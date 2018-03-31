@@ -152,4 +152,6 @@
     <string name="location">Location</string>
     <string name="date">Date</string>
     <string name="done">Done</string>
+    <string name="todo">TODO</string>
+    <string name="information_technology">Information Technology</string>
 </resources>
