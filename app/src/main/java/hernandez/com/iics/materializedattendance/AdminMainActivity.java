@@ -1,5 +1,6 @@
 package hernandez.com.iics.materializedattendance;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -44,8 +45,9 @@ public class AdminMainActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        calendarView =  (CalendarView) findViewById(R.id.calendarView);
+       /* calendarView =  (CalendarView) findViewById(R.id.calendarView);
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @SuppressLint("WrongConstant")
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 Intent intent = new Intent(AdminMainActivity.this, EventActivity.class);
@@ -53,7 +55,7 @@ public class AdminMainActivity extends AppCompatActivity
                 Toast.makeText(getApplicationContext(), ""+month+ " "+dayOfMonth +", "+year, 0).show();// TODO Auto-generated method stub
 
             }
-        });
+        });*/
     }
 
     @Override
@@ -94,18 +96,27 @@ public class AdminMainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_event) {
-            // Handle the camera action
-        } else if (id == R.id.nav_faculty) {
-        Intent intent = new Intent(this, FacultyActivity.class);
-        startActivity(intent);
-        } else if (id == R.id.nav_settings) {
+        switch (id) {
 
-        } else if (id == R.id.nav_sync) {
+            case R.id.nav_event:
+                Intent h = new Intent(AdminMainActivity.this, EventActivity.class);
+                startActivity(h);
+                break;
+            case R.id.nav_faculty:
+                Intent intent = new Intent(AdminMainActivity.this, FacultyActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_settings:
+                Intent g = new Intent(AdminMainActivity.this, SettingsActivity.class);
+                startActivity(g);
+                break;
+           /* case R.id.nav_sync:
+                Intent s= new Intent(this,SyncActivity.class);
+                startActivity(s);
+                break;*/
 
         }
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

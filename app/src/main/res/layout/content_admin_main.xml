@@ -8,10 +8,4 @@
     tools:context="hernandez.com.iics.materializedattendance.AdminMainActivity"
     tools:showIn="@layout/app_bar_admin_main">
 
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="54dp" />
 </android.support.constraint.ConstraintLayout>

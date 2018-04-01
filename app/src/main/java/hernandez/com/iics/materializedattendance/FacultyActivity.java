@@ -1,5 +1,6 @@
 package hernandez.com.iics.materializedattendance;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,6 +21,9 @@ public class FacultyActivity extends AppCompatActivity
     String[] facultyName = {"Eugenia Ramirez", "Mike Victorio", "Mylene Domingo"};
     String[] facultyDept = {"IT Dept", "IT Chair","Institute Secretary"};
     Integer[] facultyPic = {R.mipmap.zhuo, R.mipmap.victorio, R.mipmap.domingo};
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +51,7 @@ public class FacultyActivity extends AppCompatActivity
 
         //list
         list = (ListView) findViewById(R.id.facultyListView);
-        CustomListView customListView = new CustomListView(this, facultyName, facultyDept, facultyPic);
+        CustomListView customListView = new CustomListView(FacultyActivity.this, facultyName, facultyDept, facultyPic);
         list.setAdapter(customListView);
     }
 
@@ -64,7 +68,7 @@ public class FacultyActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.faculty, menu);
+        getMenuInflater().inflate(R.menu.admin_main, menu);
         return true;
     }
 
@@ -89,22 +93,28 @@ public class FacultyActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-       /* if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        switch (id) {
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }*/
-
+            case R.id.nav_event:
+                Intent h = new Intent(FacultyActivity.this, EventActivity.class);
+                startActivity(h);
+                break;
+            case R.id.nav_faculty:
+                Intent intent = new Intent(FacultyActivity.this, FacultyActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_settings:
+                Intent g = new Intent(FacultyActivity.this, SettingsActivity.class);
+                startActivity(g);
+                break;
+            /*case R.id.nav_sync:
+                Intent s= new Intent(FacultyActivity.this,SyncActivity.class);
+                startActivity(s);
+                break;*/
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 }
+
