@@ -54,9 +54,9 @@ public class CustomListView extends ArrayAdapter<String> {
         TextView b;
         ImageView c;
         ViewHolder(View v){
-            a = (TextView) v.findViewById(R.id.facultyName);
-            b = (TextView) v.findViewById(R.id.facultyDesc);
-            c = (ImageView) v.findViewById(R.id.facultyPic);
+            a = (TextView) v.findViewById(R.id.facultyyName);
+            b = (TextView) v.findViewById(R.id.facultyyDesc);
+            c = (ImageView) v.findViewById(R.id.facultyyPic);
         }
     }
 

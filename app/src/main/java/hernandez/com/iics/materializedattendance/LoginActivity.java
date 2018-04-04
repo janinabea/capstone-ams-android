@@ -48,7 +48,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 
 
 
-public class LoginActivity extends AppCompatActivity  {
+public class  LoginActivity extends AppCompatActivity  {
     private EditText mEmailView;
     private EditText mPasswordView;
     private View mProgressView;

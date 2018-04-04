@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -20,7 +23,7 @@ import android.widget.Toast;
 
 public class AdminMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    CalendarView calendarView;
+    //CalendarView calendarView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,8 +59,17 @@ public class AdminMainActivity extends AppCompatActivity
 
             }
         });*/
+        //deafultFragment
+//        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//        ft.replace(R.id.frameLayoutContainer, new FacultyFragment());
+//        ft.commit();
+        //navigationView.setCheckedItem(R.id.nav_event);
+
     }
 
+    public void setActionBarTitle(String titlee){
+        getSupportActionBar().setTitle(titlee);
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -96,15 +108,19 @@ public class AdminMainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        switch (id) {
+        Fragment fragment = null;
+        Class fragmentClass = null;
+
+         switch (id) {
 
             case R.id.nav_event:
                 Intent h = new Intent(AdminMainActivity.this, EventActivity.class);
                 startActivity(h);
                 break;
             case R.id.nav_faculty:
-                Intent intent = new Intent(AdminMainActivity.this, FacultyActivity.class);
-                startActivity(intent);
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.frameLayoutContainer, new FacultyFragment());
+                ft.commit();
                 break;
             case R.id.nav_settings:
                 Intent g = new Intent(AdminMainActivity.this, SettingsActivity.class);
@@ -116,7 +132,9 @@ public class AdminMainActivity extends AppCompatActivity
                 break;*/
 
         }
-            DrawerLayout drawer = findViewById(R.id.drawer_layout);
+
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

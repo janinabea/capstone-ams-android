@@ -1,9 +1,12 @@
 package hernandez.com.iics.materializedattendance;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,21 +16,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class FacultyActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     ListView list;
     String[] facultyName = {"Eugenia Ramirez", "Mike Victorio", "Mylene Domingo"};
     String[] facultyDept = {"IT Dept", "IT Chair","Institute Secretary"};
-    Integer[] facultyPic = {R.mipmap.zhuo, R.mipmap.victorio, R.mipmap.domingo};
-
+    int[] facultyPic = {R.drawable.zhuo, R.drawable.victorio, R.drawable.domingo_background};
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faculty);
+        //list
+        list = (ListView) findViewById(R.id.facultyListView);
+        //CustomListView customListView = new CustomListView(FacultyActivity.this, facultyName, facultyDept, facultyPic);
+        CustomAdapter cs  = new CustomAdapter(FacultyActivity.this, facultyName, facultyDept,facultyPic);
+        list.setAdapter(cs);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -49,10 +61,8 @@ public class FacultyActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //list
-        list = (ListView) findViewById(R.id.facultyListView);
-        CustomListView customListView = new CustomListView(FacultyActivity.this, facultyName, facultyDept, facultyPic);
-        list.setAdapter(customListView);
+
+
     }
 
     @Override
@@ -116,5 +126,38 @@ public class FacultyActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    class CustomAdapter extends ArrayAdapter {
+
+        int[] imgArray;
+        String[] txtName;
+        String[] txtDept;
+
+        public CustomAdapter(Context context, String[] facName, String[] facDept, int[] facPic){
+            super(context, R.layout.listview_faculty, R.id.facultyyName, facName);
+            this.imgArray = facPic;
+            this.txtName = facName;
+            this.txtDept = facDept;
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View view = inflater.inflate(R.layout.listview_faculty, parent, false);
+
+            ImageView imgv =  (ImageView) view.findViewById(R.id.facultyyPic);
+            TextView txtv = (TextView) view.findViewById(R.id.facultyyName);
+            TextView txtv2 = (TextView) view.findViewById(R.id.facultyyDesc);
+
+            imgv.setImageResource(facultyPic[position]);
+            txtv.setText(facultyName[position]);
+            txtv2.setText(facultyDept[position]);
+            return view;
+        }
+
+    }
+
+
 }
 
