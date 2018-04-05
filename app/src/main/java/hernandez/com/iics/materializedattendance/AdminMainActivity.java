@@ -60,10 +60,10 @@ public class AdminMainActivity extends AppCompatActivity
             }
         });*/
         //deafultFragment
-//        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//        ft.replace(R.id.frameLayoutContainer, new FacultyFragment());
-//        ft.commit();
-        //navigationView.setCheckedItem(R.id.nav_event);
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frameLayoutContainer, new EventFragment());
+        ft.commit();
+        navigationView.setCheckedItem(R.id.nav_event);
 
     }
 
@@ -95,7 +95,7 @@ public class AdminMainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_addEvent) {
             return true;
         }
 
@@ -114,13 +114,14 @@ public class AdminMainActivity extends AppCompatActivity
          switch (id) {
 
             case R.id.nav_event:
-                Intent h = new Intent(AdminMainActivity.this, EventActivity.class);
-                startActivity(h);
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.frameLayoutContainer, new EventFragment());
+                ft.commit();
                 break;
             case R.id.nav_faculty:
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.frameLayoutContainer, new FacultyFragment());
-                ft.commit();
+                FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
+                ft1.replace(R.id.frameLayoutContainer, new FacultyFragment());
+                ft1.commit();
                 break;
             case R.id.nav_settings:
                 Intent g = new Intent(AdminMainActivity.this, SettingsActivity.class);
@@ -130,6 +131,7 @@ public class AdminMainActivity extends AppCompatActivity
                 Intent s= new Intent(this,SyncActivity.class);
                 startActivity(s);
                 break;*/
+           //progress bar should  be attached for
 
         }
 

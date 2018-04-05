@@ -154,4 +154,15 @@
     <string name="done">Done</string>
     <string name="todo">TODO</string>
     <string name="information_technology">Information Technology</string>
+    <string name="jan">JAN</string>
+    <string name="new_year">New Year</string>
+    <string name="_01">01</string>
+    <string name="sunday">SUNDAY</string>
+    <string name="edit">Edit</string>
+    <string name="might_be_rescheduled_if_earthquake_drill_pushes_thru">Might be rescheduled if earthquake drill pushes thru</string>
+    <string name="seminar">Seminar</string>
+    <string name="_1_00_pm_5_00_pm">1:00 PM - 5:00 PM</string>
+    <string name="_4_january_2018">4 January 2018</string>
+    <string name="room_314_roque_ruano">Room 314, Roque Ruano</string>
+    <string name="seminar_about_first_aid_techniques">Seminar about first aid techniques</string>
 </resources>
