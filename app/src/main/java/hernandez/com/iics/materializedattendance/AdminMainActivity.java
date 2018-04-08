@@ -18,12 +18,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
 public class AdminMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     //CalendarView calendarView;
+    FloatingActionButton fab_add, fab_addEvent, fab_addFaculty;
+    Animation fabOpen, fabClose, fabRotateClockwise, fabRotateCounter;
+    boolean isOpen= false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,12 +36,48 @@ public class AdminMainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+//        FloatingActionButton fab = findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+        fab_add = (FloatingActionButton) findViewById(R.id.fab_add);
+        fab_addEvent = (FloatingActionButton) findViewById(R.id.fab_addEvent);
+        fab_addFaculty = (FloatingActionButton) findViewById(R.id.fab_addFaculty);
+        fabOpen = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fab_open);
+        fabClose = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fab_close);
+        fabRotateClockwise = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_clockwise);
+        fabRotateCounter = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_counterclockwise);
+
+        fab_add.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                if(isOpen){
+                    fab_addEvent.startAnimation(fabClose);
+                    fab_addFaculty.startAnimation(fabClose);
+                    fab_add.startAnimation(fabRotateCounter);
+                    fab_addFaculty.setClickable(false);
+                    fab_addEvent.setClickable(false);
+                    isOpen = false;
+                }else{
+                    fab_addEvent.startAnimation(fabOpen);
+                    fab_addFaculty.startAnimation(fabOpen);
+                    fab_add.startAnimation(fabRotateClockwise);
+                    fab_addFaculty.setClickable(true);
+                    fab_addEvent.setClickable(true);
+                    isOpen = true;
+                }
+            }
+        });
+        fab_addEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AdminMainActivity.this, addEventActivity.class);
+                startActivity(i);
+
             }
         });
 

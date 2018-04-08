@@ -31,16 +31,21 @@
             android:label="@string/title_activity_admin_main"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".FacultyActivity"
-            android:label="@string/title_activity_faculty"
-            android:theme="@style/AppTheme" />
-        <activity
             android:name=".EventActivity"
             android:label="@string/title_activity_event"
             android:theme="@style/AppTheme">
-                <meta-data
-                    android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".AdminMainActivity"/>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="AdminMainActivity" />
+        </activity>
+        <activity
+            android:name=".addEventActivity"
+            android:label="@string/title_activity_add_event"
+            android:parentActivityName=".AdminMainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="AdminMainActivity" />
         </activity>
     </application>
 

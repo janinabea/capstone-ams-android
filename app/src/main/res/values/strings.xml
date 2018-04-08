@@ -165,4 +165,13 @@
     <string name="_4_january_2018">4 January 2018</string>
     <string name="room_314_roque_ruano">Room 314, Roque Ruano</string>
     <string name="seminar_about_first_aid_techniques">Seminar about first aid techniques</string>
+    <string name="title_activity_add_event">addEventActivity</string>
+    <string name="from">From</string>
+    <string name="select">Select</string>
+    <string name="event_name">Event Name</string>
+    <string name="description">Description</string>
+    <string name="venue">Venue</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="to">To</string>
 </resources>

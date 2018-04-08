@@ -91,16 +91,6 @@
                         android:paddingBottom="15dp"
                         android:text="@string/seminar"
                         android:textSize="18sp"/>
-                    <TextView
-                        android:id="@+id/eventRemarks"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/edit"
-                        android:drawablePadding="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:paddingBottom="15dp"
-                        android:text="@string/might_be_rescheduled_if_earthquake_drill_pushes_thru"
-                        android:textSize="18sp"/>
 
                     <Button
                         android:id="@+id/btnEditEventDetails"
