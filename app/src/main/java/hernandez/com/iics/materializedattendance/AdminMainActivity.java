@@ -100,7 +100,7 @@ public class AdminMainActivity extends AppCompatActivity
 
             }
         });*/
-        //deafultFragment
+        //defaultFragment
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frameLayoutContainer, new EventFragment());
         ft.commit();
@@ -111,6 +111,7 @@ public class AdminMainActivity extends AppCompatActivity
     public void setActionBarTitle(String titlee){
         getSupportActionBar().setTitle(titlee);
     }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -172,7 +173,7 @@ public class AdminMainActivity extends AppCompatActivity
                 Intent s= new Intent(this,SyncActivity.class);
                 startActivity(s);
                 break;*/
-           //progress bar should  be attached for
+           //progress bar should  be attached for sync
 
         }
 
