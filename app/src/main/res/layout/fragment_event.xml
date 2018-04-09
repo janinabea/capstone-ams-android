@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="hernandez.com.iics.materializedattendance.EventFragment">
+
+    <ListView
+        android:id="@+id/eventListView"
+        style="@style/Widget.AppCompat.ListView.DropDown"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"></ListView>
+
+</FrameLayout>
