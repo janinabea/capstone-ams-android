@@ -44,9 +44,9 @@
                         android:id="@+id/eventDescription"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/description"
+                        android:drawableStart="@drawable/description"
                         android:drawablePadding="10dp"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:paddingBottom="15dp"
                         android:text="@string/seminar_about_first_aid_techniques"
                         android:textSize="18sp"/>
@@ -54,9 +54,9 @@
                         android:id="@+id/eventVenue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                        android:drawableStart="@drawable/ic_location_on_black_24dp"
                         android:drawablePadding="10dp"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:paddingBottom="15dp"
                         android:text="@string/room_314_roque_ruano"
                         android:textSize="18sp"/>
@@ -64,9 +64,9 @@
                         android:id="@+id/eventDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/date_range"
+                        android:drawableStart="@drawable/date_range"
                         android:drawablePadding="10dp"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:paddingBottom="15dp"
                         android:text="@string/_4_january_2018"
                         android:textSize="18sp"/>
@@ -74,9 +74,9 @@
                         android:id="@+id/eventTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/access_time"
+                        android:drawableStart="@drawable/access_time"
                         android:drawablePadding="10dp"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:paddingBottom="15dp"
                         android:text="@string/_1_00_pm_5_00_pm"
                         android:textSize="18sp"/>
@@ -85,9 +85,9 @@
                         android:id="@+id/eventType"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/chevron_right"
+                        android:drawableStart="@drawable/chevron_right"
                         android:drawablePadding="10dp"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:paddingBottom="15dp"
                         android:text="@string/seminar"
                         android:textSize="18sp"/>
@@ -108,6 +108,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
 
 
                 </LinearLayout>

@@ -16,6 +16,16 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <Spinner
+            android:id="@+id/selectEventType"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="434dp"
+            />
+
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -25,12 +35,11 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:drawableLeft="@drawable/event_available"
+                android:drawableStart="@drawable/event_available"
                 android:hint="@string/event_name"
                 android:inputType="text"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:textAlignment="center"
                 android:textSize="14sp" />
         </android.support.design.widget.TextInputLayout>
 
@@ -43,12 +52,11 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:drawableLeft="@drawable/event_note"
+                android:drawableStart="@drawable/event_note"
                 android:hint="@string/description"
                 android:inputType="text"
                 android:maxLines="2"
                 android:singleLine="true"
-                android:textAlignment="center"
                 android:textSize="14sp" />
         </android.support.design.widget.TextInputLayout>
 
@@ -61,12 +69,11 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                android:drawableStart="@drawable/ic_location_on_black_24dp"
                 android:hint="@string/venue"
                 android:inputType="text"
                 android:maxLines="2"
                 android:singleLine="true"
-                android:textAlignment="center"
                 android:textSize="14sp" />
         </android.support.design.widget.TextInputLayout>
         <TextView
@@ -76,7 +83,8 @@
             android:layout_marginBottom="8dp"
             android:paddingStart="40dp"
             android:layout_marginTop="10dp"
-            android:text="@string/from" />
+            android:text="@string/from"
+            tools:ignore="RtlSymmetry" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -94,9 +102,11 @@
                 android:ems="10"
                 android:hint="@string/date"
                 android:inputType="date"
+                android:enabled="false"
                 android:textSize="14sp" />
+
             <Button
-                android:id="@+id/btnSelectDt"
+                android:id="@+id/btnSelectDateFrom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -119,13 +129,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:drawableLeft="@drawable/access_time"
+            android:drawableStart="@drawable/access_time"
             android:ems="10"
             android:hint="@string/time"
             android:inputType="time"
+            android:enabled="false"
             android:textSize="14sp" />
+
         <Button
-            android:id="@+id/btnSelectTym"
+            android:id="@+id/btnSelectTimeFrom"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -143,9 +155,39 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:paddingStart="40dp"
+            android:paddingEnd="40dp"
             android:layout_marginTop="10dp"
             android:text="@string/to" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="38dp"
+            android:paddingEnd="35dp">
+
+            <EditText
+                android:id="@+id/inputEventDateTo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/date_range"
+                android:ems="10"
+                android:hint="@string/date"
+                android:inputType="date"
+                android:textSize="14sp"
+                android:enabled="false"/>
+            <Button
+                android:id="@+id/btnSelectDateTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/select"
+                android:textSize="12sp" />
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -162,7 +204,8 @@
                 android:ems="10"
                 android:hint="@string/time"
                 android:inputType="time"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:enabled="false"/>
             <Button
                 android:id="@+id/btnSelectTimeTo"
                 style="@style/Widget.AppCompat.Button"
@@ -175,24 +218,6 @@
                 android:text="@string/select"
                 android:textSize="12sp" />
         </LinearLayout>
-
-
-
-
-        <Spinner
-            android:id="@+id/selectEventType"
-            android:layout_width="271dp"
-            android:layout_height="33dp"
-            android:layout_gravity="center"
-            tools:layout_editor_absoluteX="50dp"
-            tools:layout_editor_absoluteY="434dp" />
-
-
-
-
-
-
-
 
 
     </LinearLayout>

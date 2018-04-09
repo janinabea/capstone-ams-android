@@ -79,6 +79,7 @@
             app:layout_constraintHorizontal_bias="0.666"
             app:layout_constraintStart_toStartOf="@+id/month"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.578" />
+            app:layout_constraintVertical_bias="0.578"
+            tools:ignore="SmallSp" />
     </android.support.constraint.ConstraintLayout>
 </LinearLayout>

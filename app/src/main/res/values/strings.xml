@@ -169,7 +169,8 @@
     <string name="event_name">Event Name</string>
     <string name="description">Description</string>
     <string name="venue">Venue</string>
-    <string name="date">Date</string>
+
     <string name="time">Time</string>
     <string name="to">To</string>
+    <string name="date">Date</string>
 </resources>
