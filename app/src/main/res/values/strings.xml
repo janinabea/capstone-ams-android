@@ -173,4 +173,5 @@
     <string name="time">Time</string>
     <string name="to">To</string>
     <string name="date">Date</string>
+    <string name="attendance">Attendance</string>
 </resources>

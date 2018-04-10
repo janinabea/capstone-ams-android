@@ -36,61 +36,64 @@
                     android:id="@+id/details"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
                     android:layout_margin="10dp"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/eventDescription"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/description"
-                        android:drawablePadding="10dp"
                         android:layout_marginStart="10dp"
+                        android:drawablePadding="10dp"
+                        android:drawableStart="@drawable/description"
                         android:paddingBottom="15dp"
                         android:text="@string/seminar_about_first_aid_techniques"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/eventVenue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_location_on_black_24dp"
-                        android:drawablePadding="10dp"
                         android:layout_marginStart="10dp"
+                        android:drawablePadding="10dp"
+                        android:drawableStart="@drawable/ic_location_on_black_24dp"
                         android:paddingBottom="15dp"
                         android:text="@string/room_314_roque_ruano"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/eventDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/date_range"
-                        android:drawablePadding="10dp"
                         android:layout_marginStart="10dp"
+                        android:drawablePadding="10dp"
+                        android:drawableStart="@drawable/date_range"
                         android:paddingBottom="15dp"
                         android:text="@string/_4_january_2018"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/eventTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/access_time"
-                        android:drawablePadding="10dp"
                         android:layout_marginStart="10dp"
+                        android:drawablePadding="10dp"
+                        android:drawableStart="@drawable/access_time"
                         android:paddingBottom="15dp"
                         android:text="@string/_1_00_pm_5_00_pm"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/eventType"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/chevron_right"
-                        android:drawablePadding="10dp"
                         android:layout_marginStart="10dp"
+                        android:drawablePadding="10dp"
+                        android:drawableStart="@drawable/chevron_right"
                         android:paddingBottom="15dp"
                         android:text="@string/seminar"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp" />
 
                     <Button
                         android:id="@+id/btnEditEventDetails"
@@ -107,8 +110,18 @@
                     android:id="@+id/attendance"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#d1d1d1"
                     android:orientation="vertical">
 
+
+                    <GridView
+                        android:id="@+id/gridViewFaculty"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:columnWidth="150dp"
+                        android:numColumns="3"
+                        android:visibility="visible" />
 
 
                 </LinearLayout>

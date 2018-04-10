@@ -47,6 +47,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="AdminMainActivity" />
         </activity>
+        <activity
+            android:name=".StaffMainActivity"
+            android:label="@string/title_activity_staff_main"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

@@ -53,25 +53,30 @@ public class  LoginActivity extends AppCompatActivity  {
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-//    LoginHelper lHelper = new LoginHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         final Button btnLogin = (Button) findViewById(R.id.email_sign_in_button);
+        final EditText uname = (EditText)findViewById(R.id.email);
+        final EditText pass = (EditText)findViewById(R.id.password);
         btnLogin.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-//                boolean isExist= lHelper.userExist(mEmailView.getText().toString(), mPasswordView.getText().toString());
-//                if(isExist){
-//                    Intent intent = new Intent(LoginActivity.this, AdminMainActivity.class);
-//                }else{
-//                    mPasswordView.setText(null);
-//                    Toast.makeText(LoginActivity.this, "Login failed. Invalid username or password", Toast.LENGTH_SHORT).show();
-//                }w
-                Intent intent = new Intent(LoginActivity.this, AdminMainActivity.class);
-                startActivity(intent);
+                if(uname.getText().toString().equals("admin") &&
+                      pass.getText().toString().equals("admin") ){
+                    Intent intent = new Intent(LoginActivity.this, AdminMainActivity.class);
+                    startActivity(intent);
+                }else if(uname.getText().toString().equals("user") &&
+                        pass.getText().toString().equals("user") ){
+                    Intent intent = new Intent(LoginActivity.this, StaffMainActivity.class);
+                    startActivity(intent);
+                }
+                else{
+                    Toast.makeText(LoginActivity.this, "Invalid credentials.",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }
