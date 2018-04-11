@@ -50,6 +50,10 @@
         <activity
             android:name=".StaffMainActivity"
             android:label="@string/title_activity_staff_main"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".FacultyDetailsActivity"
+            android:label="@string/title_activity_faculty_details"
             android:theme="@style/AppTheme"></activity>
     </application>
 

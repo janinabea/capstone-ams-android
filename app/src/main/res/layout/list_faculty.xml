@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp">
+
+    <ImageView
+        android:id="@+id/listFacPic"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="start|center"
+        android:contentDescription="TODO"/>
+
+    <TextView
+        android:id="@+id/listFacName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/janina_bea_hernandez"
+        android:textColor="#333"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@+id/listFacPic"
+
+        />
+
+    <TextView
+        android:id="@+id/listFacDept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/information_technology"
+        android:textColor="#333"
+        android:textSize="12sp"
+
+        android:layout_toEndOf="@id/listFacPic"
+        />
+
+
+
+
+</RelativeLayout>

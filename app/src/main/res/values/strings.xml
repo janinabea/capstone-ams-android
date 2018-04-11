@@ -174,4 +174,6 @@
     <string name="to">To</string>
     <string name="date">Date</string>
     <string name="attendance">Attendance</string>
+    <string name="title_activity_faculty_details">FacultyDetailsActivity</string>
+    <string name="eugenia_ramirez">Eugenia Ramirez</string>
 </resources>

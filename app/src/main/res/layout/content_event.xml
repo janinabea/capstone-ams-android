@@ -30,7 +30,8 @@
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_weight="0">
 
                 <LinearLayout
                     android:id="@+id/details"
@@ -106,27 +107,33 @@
 
                 </LinearLayout>
 
+
+
+
                 <LinearLayout
                     android:id="@+id/attendance"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#d1d1d1"
+                    android:background="#FFFF"
                     android:orientation="vertical">
 
+                    <ListView
+                        android:id="@+id/facultyCheckListView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                    <GridView
+                    </ListView>
+                    <!--<GridView
                         android:id="@+id/gridViewFaculty"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:columnWidth="150dp"
                         android:numColumns="3"
-                        android:visibility="visible" />
-
-
+                        android:visibility="visible" />-->
                 </LinearLayout>
-
             </FrameLayout>
+
         </LinearLayout>
     </TabHost>
 </android.support.constraint.ConstraintLayout>

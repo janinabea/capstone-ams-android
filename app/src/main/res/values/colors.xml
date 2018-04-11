@@ -10,5 +10,5 @@
 
     <color  name="mainFab">#F44336</color>
     <color  name="addEventFab">#4CAF50</color>
-    <color  name="addFacultyFab">#2196F3</color>
+    <color  name="addFacultyFab">#2196f3</color>
 </resources>

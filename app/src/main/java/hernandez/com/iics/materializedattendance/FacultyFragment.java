@@ -1,6 +1,7 @@
 package hernandez.com.iics.materializedattendance;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,6 +9,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -16,10 +19,10 @@ import android.widget.TextView;
 
 public class FacultyFragment extends Fragment {
 
-    ListView list;
-    String[] facultyName = {"Eugenia Ramirez", "Mike Victorio", "Mylene Domingo"};
-    String[] facultyDept = {"IT Dept", "IT Chair","Institute Secretary"};
-    int[] facultyPic = {R.drawable.zhuo, R.drawable.victorio, R.drawable.domingo};
+        ListView list;
+        String[] facultyName = {"Jonatahan Cabero","Eugenia Ramirez","Divinagracia Mariano", "Mike Victorio", "Mylene Domingo"};
+        String[] facultyDept = {"CS Dept","IT Dept","IS Dept/SWDB Coordinator", "IT Chair","Institute Secretary"};
+        int[] facultyPic = {R.drawable.cabero, R.drawable.zhuo,R.drawable.mariano, R.drawable.victorio, R.drawable.domingo};
 
 
     public FacultyFragment() {
@@ -30,6 +33,7 @@ public class FacultyFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -43,40 +47,64 @@ public class FacultyFragment extends Fragment {
         list = (ListView) v.findViewById(R.id.facultyListView);
         CustomAdapter cs  = new CustomAdapter(getActivity(), facultyName, facultyDept,facultyPic);
         list.setAdapter(cs);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v, int i, long l) {
+                Intent intent = new Intent(getActivity(), FacultyDetailsActivity.class );
+                intent.putExtra("names", facultyName[i]);
+                intent.putExtra("pics", facultyPic[i]);
+            }
+
+        });
+
         return v;
-
-
     }
 
-    class CustomAdapter extends ArrayAdapter {
+    public class CustomAdapter extends ArrayAdapter<String> {
 
         int[] imgArray;
         String[] txtName;
         String[] txtDept;
 
         public CustomAdapter(Context context, String[] facName, String[] facDept, int[] facPic){
-            super(context, R.layout.listview_faculty, R.id.facultyyName, facName);
+            super(context, R.layout.listview_faculty, R.id.listFacDept, facName);
             this.imgArray = facPic;
             this.txtName = facName;
             this.txtDept = facDept;
+        }
+        @Override
+        public int getCount(){
+            return facultyName.length;
         }
 
         @NonNull
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View view = inflater.inflate(R.layout.listview_faculty, parent, false);
+            ViewHolder viewHolder = new ViewHolder();
+            if(convertView == null) {
+                LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = inflater.inflate(R.layout.list_faculty, parent, false);
 
-            ImageView imgv =  (ImageView) view.findViewById(R.id.facultyyPic);
-            TextView txtv = (TextView) view.findViewById(R.id.facultyyName);
-            TextView txtv2 = (TextView) view.findViewById(R.id.facultyyDesc);
+                viewHolder.pic = (ImageView) convertView.findViewById(R.id.listFacPic);
+                viewHolder.name = (TextView) convertView.findViewById(R.id.listFacName);
+                viewHolder.dept = (TextView) convertView.findViewById(R.id.listFacDept);
+                convertView.setTag(viewHolder);
+            }else{
+                viewHolder = (ViewHolder)convertView.getTag();
+            }
+                viewHolder.pic.setImageResource(facultyPic[position]);
+                viewHolder.name.setText(facultyName[position]);
+                viewHolder.dept.setText(facultyDept[position]);
 
-            imgv.setImageResource(facultyPic[position]);
-            txtv.setText(facultyName[position]);
-            txtv2.setText(facultyDept[position]);
-            return view;
+            return convertView;
         }
 
+    }
+
+    static class ViewHolder{
+        ImageView pic;
+        TextView name, dept;
     }
 
 
